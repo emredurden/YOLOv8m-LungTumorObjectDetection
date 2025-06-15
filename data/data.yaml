@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images1
+
+nc: 7
+names: ['Right lung', 'Thymus', 'esophagus', 'heart', 'left lung', 'spinal kord', 'tumors']
+
+roboflow:
+  workspace: pgmdataset
+  project: pgmlabeledtumor
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/pgmdataset/pgmlabeledtumor/dataset/5
