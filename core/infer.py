@@ -12,12 +12,8 @@ def adjust_contrast(img, alpha):
     """
     return np.clip(img * alpha, 0, 255).astype(np.uint8)
 
-# ÖNEMLİ NOT: Bu değer, CT görüntünüzün piksel başına düşen milimetre cinsinden boyutudur.
-# Genellikle DICOM görüntülerinin metaverilerinde (Pixel Spacing) bulunur.
-# Kendi verinize göre bu değeri GÜNCELLEMENİZ GEREKMEKTEDİR.
-# Örneğin, eğer bir piksel 0.7 mm'ye eşitse, pixel_to_mm_ratio = 0.7 olmalıdır.
-PIXEL_TO_MM_RATIO = 0.7 # Yer tutucu değer, gerçek CT verinize göre değiştirilmeli!
 
+PIXEL_TO_MM_RATIO = 0.7 
 
 def infer_folder(model_path, folder_path, confidence_threshold=0.25):
     """
@@ -31,7 +27,7 @@ def infer_folder(model_path, folder_path, confidence_threshold=0.25):
     image_files = sorted([
         os.path.join(folder_path, f)
         for f in os.listdir(folder_path)
-        if f.lower().endswith(('.jpg', '.jpeg', '.png')) # JPG, JPEG, PNG formatındaki dosyaları listeler
+        if f.lower().endswith(('.jpg', '.jpeg', '.png')) 
     ])
 
     if not image_files:
@@ -39,10 +35,10 @@ def infer_folder(model_path, folder_path, confidence_threshold=0.25):
         return
 
     output_dir = os.path.join(os.getcwd(), "outputs")
-    os.makedirs(output_dir, exist_ok=True) # Çıktı klasörünü oluşturur
+    os.makedirs(output_dir, exist_ok=True) 
 
     index = 0
-    alpha = 1.0  # Kontrast çarpanı (başlangıç değeri)
+    alpha = 1.0  
 
     while True:
         img_path = image_files[index]
@@ -66,8 +62,7 @@ def infer_folder(model_path, folder_path, confidence_threshold=0.25):
                 actual_class_name_raw = model.names[cls_id_raw]
                 conf_raw = float(box.conf[0])
                 print(f"    - {actual_class_name_raw}: Güven = {conf_raw:.4f}")
-        # --- Hata Ayıklama Çıktısı Bitişi ---
-
+       
         # Sınırlama mantığı için set
         # 'tumor' (modelin tanıdığı singular isim) dışındaki sınıfların sadece bir kez çizildiğini takip eder
         drawn_once_non_tumor_classes = set()
