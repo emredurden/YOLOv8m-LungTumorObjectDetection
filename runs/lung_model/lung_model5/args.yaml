@@ -1,6 +1,6 @@
 task: detect
 mode: train
-model: yolov8s.pt
+model: yolov8m.pt
 data: C:\Users\Emre Duran\Desktop\PGMV3\data\data.yaml
 epochs: 200
 time: null
