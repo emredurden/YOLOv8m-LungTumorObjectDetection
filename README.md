@@ -1,19 +1,17 @@
 # YOLOv8m-LungTumorObjectDetection
 
-Bu proje, akciğer tümörlerini tespit etmek için YOLOv8m tabanlı bir nesne tespit modeli geliştirmeyi amaçlar. DICOM medikal görüntüleri PNG formatına dönüştürme ve model eğitimi, çıkarımı (inference) ile hiperparametre optimizasyonu gibi temel fonksiyonları içerir.
+Bu depo, akciğer tümörlerini tespit etmek için YOLOv8m mimarisine dayalı sağlam bir nesne algılama modeli sunmaktadır. Projemiz, veri hazırlığından model optimizasyonuna ve dağıtımına kadar tüm süreci kapsamaktadır.
 
-Ana Özellikler
-DICOM dosyalarını otomatik olarak algılayıp PNG formatına dönüştürme (dicomTopng.py)
-YOLOv8m ile model eğitimi, toplu klasör çıkarımı ve Optuna ile hiperparametre optimizasyonu (main.py)
-Kolay kullanılabilir komut satırı arayüzü
+Ana Özellikler:
 
-Klasör Yapısı
+DICOM'dan PNG'ye Dönüşüm: Tıbbi DICOM görüntülerini model eğitimi için kullanılabilir PNG formatına dönüştürmek için araçlar ve betikler.
 
-core/ : Eğitim, çıkarım ve optimizasyon modülleri
+YOLOv8m Model Eğitimi: YOLOv8m modelini eğitmek için kapsamlı betikler ve konfigürasyonlar.
 
-configs/ : Model ve veri seti yapılandırma dosyaları
+Çıkarım ve Tahmin: Eğitilmiş modeli kullanarak doğru akciğer tümörü tespiti için çıkarım yapma işlevselliği.
 
-data/ : Eğitim ve test veri setleri
+Hiperparametre Optimizasyonu: Optimal performans elde etmek için model hiperparametrelerini ince ayar yapmak için teknikler ve uygulamalar.
 
-runs/ : Model çıktı ve sonuçları
+Yapılandırılmış Veri: Düzenli eğitim ve test veri kümeleri ile birlikte model çıktıları.
 
+Bu proje, otomatik akciğer tümörü tespiti için verimli ve doğru bir çözüm sunarak, tıbbi görüntüleme analizine önemli ölçüde yardımcı olmayı hedeflemektedir.
