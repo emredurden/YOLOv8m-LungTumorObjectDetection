@@ -5,7 +5,7 @@ data: C:\Users\Emre Duran\Desktop\PGMV3\data\data.yaml
 epochs: 200
 time: null
 patience: 100
-batch: 8
+batch: 4
 imgsz: 640
 save: true
 save_period: -1
