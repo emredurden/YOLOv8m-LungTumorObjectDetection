@@ -1,0 +1,37 @@
+task: detect
+mode: train
+model: yolov8m.pt
+data: C:\Users\Emre Duran\Desktop\PGMV3\data\data.yaml
+epochs: 200
+# OPTUNA İLE BULUNAN EN İYİ HİPERPARAMETRELERDEN GÜNCELLEDİ
+batch: 8 # Trial 7'den gelen değer
+imgsz: 640 # Trial 7'den gelen değer
+device: '0'
+project: C:\Users\Emre Duran\Desktop\PGMV3\runs\lung_model
+name: lung_model
+pretrained: true
+optimizer: auto
+verbose: true
+deterministic: true
+close_mosaic: 10
+amp: true
+val: true
+split: val
+iou: 0.7
+lr0: 0.00019852483134658966 # Trial 7'den gelen değer
+lrf: 0.01 # Bu değer Optuna tarafından optimize edilmediği için orijinal kaldı
+momentum: 0.8614722717075278 # Trial 7'den gelen değer
+weight_decay: 0.0021826673700990518 # Trial 7'den gelen değer
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+warmup_bias_lr: 0.1
+box: 7.5
+cls: 1.0
+fliplr: 0.5
+dfl: 1.5
+nbs: 64
+auto_augment: randaugment
+erasing: 0.4
+# accumulate: 1 # Bu satır 'SyntaxError'a neden olduğu için kaldırıldı.
+              # Eğer VRAM yetersizliği devam ederse, 'batch' ve 'imgsz' değerlerini daha da düşürmeyi deneyin.
+
