@@ -4,8 +4,6 @@ Bu depo, akciğer tümörlerini tespit etmek için YOLOv8m mimarisine dayalı sa
 
 Ana Özellikler:
 
-DICOM'dan PNG'ye Dönüşüm: Tıbbi DICOM görüntülerini model eğitimi için kullanılabilir PNG formatına dönüştürmek için araçlar ve betikler.
-
 YOLOv8m Model Eğitimi: YOLOv8m modelini eğitmek için kapsamlı betikler ve konfigürasyonlar.
 
 Çıkarım ve Tahmin: Eğitilmiş modeli kullanarak doğru akciğer tümörü tespiti için çıkarım yapma işlevselliği.
